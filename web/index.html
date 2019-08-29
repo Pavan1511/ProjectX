@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+
+    <head>
+        <title>QandA</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="shortcut icon" type="image/x-icon" href="favicons/favicon1.ico"/>
+        <link rel="stylesheet" type="text/css" href="css/index.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    </head>
+
+    <script>
+
+        jQuery(document).ready(function() 
+        {
+            jQuery('#txt_firstCapital').keyup(function() 
+                {
+                    var str = jQuery('#txt_firstCapital').val();
+                    var spart = str.split(" ");
+                    for ( var i = 0; i < spart.length; i++ )
+                    {
+                        var j = spart[i].charAt(0).toUpperCase();
+                        spart[i] = j + spart[i].substr(1);
+                    }
+                  jQuery('#txt_firstCapital').val(spart.join(" "));
+                    
+                });
+        });
+    </script>
+
+    <script>
+        function capitalize(obj)
+        {
+            obj.value = obj.value.charAt(0).toUpperCase() + obj.value.slice(1);
+        }
+    </script>
+
+    <body>
+        <div class="mainframe">
+           <div id="logo">QandA</div>
+
+           <div style="position: absolute; top: 175px; left: 20px; font-family: Times New Roman; font-size: 40px;">Sign up:</div>
+           <input type = "search" id="txt_firstCapital" placeholder="Name" name = "a1" style="position: absolute; top:225px; left: 50px;"  autocomplete="off" spellcheck="false" maxlength="40">
+           <input type = "email" placeholder="Email" name = "a2" style="position: absolute; top:285px; left: 50px;"   autocomplete="nope" spellcheck="false" onkeyup='capitalize(this)'>
+           <input type = "password" placeholder="Password" name = "a3" style="position: absolute; top:345px; left: 50px;" autocomplete="nope" spellcheck="false" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="At least one number (0-9) and one uppercase (A-Z) and lowercase letter (a-z), and at least 8 or more characters required">
+           <div style="position: absolute; top: 400px; left: 50px">
+                <form action = "signup" method="POST">
+                    <input type="submit" value="Sign up" class="button">
+                </form>
+           </div>
+
+
+           <div style="position: absolute; top: 175px; left: 490px; font-family: Times New Roman; font-size: 40px;">Sign in:</div>
+           <input type = "email" placeholder="Email" name = "a2" style="position: absolute; top:225px; left: 520px;"   autocomplete="nope" spellcheck="false"  onkeyup='capitalize(this)' >
+           <input type = "password" placeholder="Password" name = "a3" style="position: absolute; top:285px; left: 520px;" autocomplete="nope" spellcheck="false" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="At least one number (0-9) and one uppercase (A-Z) and lowercase letter (a-z), and at least 8 or more characters required">
+           <div style="position: absolute; top:340px; left: 520px;">
+                <form action = "signin" method="POST">
+                        <input type="submit" value="Sign up" class="button">
+                </form>
+            </div>
+
+        </div>
+    </body>

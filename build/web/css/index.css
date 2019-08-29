@@ -1,0 +1,80 @@
+
+body
+{
+    background-image: url(../images/bgindex1.jpg);
+    background-repeat:no-repeat;
+    background-size: 100% 100vh;
+    user-select: none;
+}
+.mainframe
+{
+    position: absolute;
+    top: 0; bottom: 0; left: 0; right: 0;
+    margin: auto;
+    height: 600px; width: 900px;
+    background: rgba(225, 225, 225, .8);
+    /*filter: blur(2px);*/
+    /*background-image: url(images/bgindex2.jpg);*/
+    background-repeat:no-repeat;
+    background-size: 110% 85vh;
+    /*background-color: white;*/
+    box-shadow: 5px 5px -3px 5px #888;
+}
+#logo
+{
+    text-align: center;
+    filter: blur(none);
+    font-size: 125px; font-family: Baskerville;
+    color: red;
+}
+input[type=search],
+input[type=email],
+input[type=password]
+{
+    border: 2px solid #555;
+    -webkit-transition: 0.1s;
+    transition: 0.1s;
+    outline: none;
+    color: black;
+    height: 45px; width: 350px;
+    font-size: 37px; 
+    background-color:transparent;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+input[type=search]:focus,
+input[type=email]:focus,
+input[type=password]:focus
+{
+    border: 2px solid;
+}   
+input[type=search]::-webkit-search-decoration,
+::-webkit-search-cancel-button,
+::-webkit-search-results-button,
+::-webkit-search-results-decoration
+{ 
+    display: none; 
+}
+
+.button
+{
+    font-size: 15px;
+    background-color:goldenrod;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin: 4px 2px;
+    cursor: pointer;
+    border: 2px solid FFA500;
+    -webkit-transition-duration: 0.1s;
+    transition-duration: 0.1s;
+}
+.button:hover
+{
+    background-color: gold;
+    color: white;
+}
